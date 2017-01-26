@@ -1,7 +1,5 @@
 package com.springinaction.springidol;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,16 +8,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 
 public class IdolMain {
-    @Autowired
-    @Qualifier("eddie")
-    private Instrumentalist eddie;
-
-    @Autowired
-    @Qualifier("guitar")
-    private Instrument guitar;
 
     public static void main(String args[]) throws PerformanceException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-idol.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");
 
         Performer eddie = (Performer) context.getBean("eddie");
 
