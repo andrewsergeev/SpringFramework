@@ -1,6 +1,9 @@
 // <start id="volunteer_java" />
 package com.springinaction.springidol;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Volunteer implements Thinker {
   private String thoughts;
 

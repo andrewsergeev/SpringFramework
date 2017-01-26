@@ -5,8 +5,10 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
 @Aspect
+@Component
 public class Audience {
   @Pointcut("execution(* com.springinaction.springidol.Performer.perform(..))")
   public void performance() {}
