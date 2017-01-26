@@ -1,4 +1,3 @@
-// <start id="mindreader_java" />
 package com.springinaction.springidol;
 
 public interface MindReader {
@@ -6,4 +5,3 @@ public interface MindReader {
 
   String getThoughts();
 }
-// <end id="mindreader_java" />
