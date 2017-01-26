@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="admavito-server:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.admavito" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="springdemo:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.springdemo" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output-test url="file://$MODULE_DIR$/../../build/classes/test" />
     <exclude-output />
@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="admavito-server_main" />
+    <orderEntry type="module" module-name="springdemo_main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:4.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.4.3.RELEASE" level="project" />
@@ -59,5 +59,5 @@
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.8" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="admavito-server_main" />
+  <component name="TestModuleProperties" production-module="springdemo_main" />
 </module>

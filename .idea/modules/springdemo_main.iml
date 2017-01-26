@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="admavito-server:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.admavito" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="springdemo:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.springdemo" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/../../src/main/resources/spring-idol.xml</file>
-          <file>file://$MODULE_DIR$/../../src/main/resources/com/springinaction/springidol/sneaky-magician.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
-    <facet type="web" name="Web Gradle : admavito-server-1.0-SNAPSHOT.war">
+    <facet type="web" name="Web Gradle : springdemo-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
           <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
