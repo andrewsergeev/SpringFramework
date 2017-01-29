@@ -1,13 +1,11 @@
 package com.habuma.spitter.persistence;
 
-import static org.junit.Assert.*;
-import static org.springframework.test.jdbc.SimpleJdbcTestUtils.*;
-
+import com.habuma.spitter.domain.Spitter;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -16,7 +14,8 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.habuma.spitter.domain.Spitter;
+import static org.junit.Assert.*;
+import static org.springframework.test.jdbc.JdbcTestUtils.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={
@@ -31,7 +30,7 @@ import com.habuma.spitter.domain.Spitter;
 public abstract class AbstractSpitterDaoTest {
 
   @Autowired
-  private SimpleJdbcTemplate jdbcTemplate;
+  private JdbcTemplate jdbcTemplate;
   
   @Autowired
   private SpitterDao dao;
