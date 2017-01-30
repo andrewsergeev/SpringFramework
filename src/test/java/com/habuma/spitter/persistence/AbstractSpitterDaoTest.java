@@ -71,4 +71,5 @@ public abstract class AbstractSpitterDaoTest {
     dao.addSpitter(spitter);
     assertNotNull(spitter.getId());
     return spitter;
-  }}
+  }
+}
