@@ -18,4 +18,9 @@ public class GreetingController {
         return "greeting";
     }
 
+    @RequestMapping("/test")
+    public String test() {
+        return "test";
+    }
+
 }
