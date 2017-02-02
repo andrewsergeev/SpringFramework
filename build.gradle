@@ -4,29 +4,31 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'idea'
-apply plugin: "application"
+apply plugin: 'application'
 
 mainClassName = "hello.Application"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile 'org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.RELEASE'
     compile 'org.springframework:spring-aspects:4.3.5.RELEASE'
     compile 'org.springframework:spring-test:4.3.5.RELEASE'
     compile 'org.springframework:spring-orm:4.3.5.RELEASE'
     compile 'org.springframework:spring-jdbc:4.3.5.RELEASE'
-    compile 'org.hibernate:hibernate-core:5.2.6.Final'
-    compile 'junit:junit:4.12'
     compile 'org.codehaus.jackson:jackson-core-asl:1.9.13'
     compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'junit:junit:4.12'
 }
 
 jar {
-    manifest.attributes("Main-Class": mainClassName);
+    manifest.attributes("Main-Class": mainClassName)
 }
