@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springdemo.iml" filepath="$PROJECT_DIR$/.idea/modules/springdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springdemo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springdemo_main.iml" group="springdemo" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springdemo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springdemo_test.iml" group="springdemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringFramework.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringFramework_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringFramework_main.iml" group="SpringFramework" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringFramework_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringFramework_test.iml" group="SpringFramework" />
     </modules>
   </component>
 </project>

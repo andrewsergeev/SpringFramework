@@ -6,6 +6,14 @@
       <module name="admavito-server_test" target="1.8" />
       <module name="springdemo_main" target="1.8" />
       <module name="springdemo_test" target="1.8" />
+      <module name="springF_main" target="1.8" />
+      <module name="springF_test" target="1.8" />
+      <module name="springFram_main" target="1.8" />
+      <module name="springFram_test" target="1.8" />
+      <module name="springFrame_main" target="1.8" />
+      <module name="springFrame_test" target="1.8" />
+      <module name="SpringFramework_main" target="1.8" />
+      <module name="SpringFramework_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
