@@ -1,21 +1,34 @@
 package hello;
 
+import com.google.gson.Gson;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.FileInputStream;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
-/**
- * Created by alsergeev on 23.01.2017.
- */
 
 @SpringBootApplication
 @RestController
 public class Application {
+    @Autowired
+    private UsersDao usersDao;
+
     @RequestMapping("/")
     public String home() {
         return "Hello Docker World";
@@ -31,15 +44,27 @@ public class Application {
         return "Hello andrey";
     }
 
-    @RequestMapping("/hibernate")
-    public List<Users> hibernate() {
-        Session session = factory.openSession();
-
-        List<Users> users = session.get();
-
-        session.close();
-        return users;
+    @RequestMapping("/datajpa")
+    public String datajpa() {
+        return new Gson().toJson(usersDao.findAll());
     }
+
+    @RequestMapping("/email")
+    public String email() {
+        return new Gson().toJson(usersDao.findByEmail("asergeev@avito.ru"));
+    }
+
+//    @RequestMapping("/htest")
+//    public String htest() {
+//        SessionFactory factory = getSessionFactory();
+//        Session session = factory.getCurrentSession();
+//
+//        List<Users> users = session.createQuery("FROM Users").list();
+//
+//        session.close();
+//
+//        return new Gson().toJson(users);
+//    }
 
     @RequestMapping("/greetingrest")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name) {

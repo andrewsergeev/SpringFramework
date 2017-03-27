@@ -3,38 +3,14 @@ package hello;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by aelsergeev on 3/24/17.
- */
 @Entity
 @Table(name="users")
 public class Users {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
-    private String surname;
-    private String name;
-    private String username;
-    private String email;
-    private String skype;
-    private Integer phone;
-    @ManyToOne
-    private Shift shift;
-    @ManyToOne
-    private Subdivision subdivision;
-    @ManyToOne
-    private Weekend weekend;
-
-    @Column(name="birthday")
-    @Temporal(value=TemporalType.DATE)
-    private Date birthday;
-    private Integer adm_user_id;
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -78,11 +54,11 @@ public class Users {
         this.skype = skype;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
@@ -118,11 +94,34 @@ public class Users {
         this.birthday = birthday;
     }
 
-    public Integer getAdm_user_id() {
+    public Long getAdm_user_id() {
         return adm_user_id;
     }
 
-    public void setAdm_user_id(Integer adm_user_id) {
+    public void setAdm_user_id(Long adm_user_id) {
         this.adm_user_id = adm_user_id;
     }
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+    private String surname;
+    private String name;
+    private String username;
+    private String email;
+    private String skype;
+    private Long phone;
+    @ManyToOne
+    private Shift shift;
+    @ManyToOne
+    private Subdivision subdivision;
+    @ManyToOne
+    private Weekend weekend;
+
+    @Column(name="birthday")
+    @Temporal(value=TemporalType.DATE)
+    private Date birthday;
+    private Long adm_user_id;
+
+
 }
