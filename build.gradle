@@ -1,41 +1,45 @@
-group 'com.springdemo'
-version '1.0-SNAPSHOT'
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
 
 apply plugin: 'java'
-apply plugin: 'war'
 apply plugin: 'idea'
-apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
 
-mainClassName = "hello.Application"
-
+version '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.9.Final'
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.0.0'
-    compile group: 'com.google.code.gson', name: 'gson', version: '1.7.2'
-    compile 'org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.4.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
     compile 'org.springframework:spring-aspects:4.3.5.RELEASE'
     compile 'org.springframework:spring-test:4.3.5.RELEASE'
     compile 'org.springframework:spring-orm:4.3.5.RELEASE'
     compile 'org.springframework:spring-jdbc:4.3.5.RELEASE'
+
+    compile 'org.hibernate:hibernate-core:5.2.9.Final'
+    compile 'org.postgresql:postgresql:42.0.0'
+    compile 'com.google.code.gson:gson:1.7.2'
+
     compile 'org.codehaus.jackson:jackson-core-asl:1.9.13'
     compile 'org.apache.commons:commons-lang3:3.5'
     compile 'junit:junit:4.12'
 }
 
-jar {
-    manifest.attributes("Main-Class": mainClassName)
-
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+springBoot {
+    executable = true
 }
