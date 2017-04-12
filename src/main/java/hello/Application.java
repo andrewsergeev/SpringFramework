@@ -1,15 +1,16 @@
 package hello;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 
 @SpringBootApplication
+@CrossOrigin(origins = "http://localhost:63342")
 @RestController
 public class Application {
     @Autowired
@@ -35,22 +36,17 @@ public class Application {
         return new Gson().toJson(usersDao.findAll());
     }
 
+    @RequestMapping("/emailtest")
+    public Iterable<Users> emailtest() {
+        return usersDao.findAll();
+    }
+
     @RequestMapping("/email")
     public String email() {
         return new Gson().toJson(usersDao.findByEmail("asergeev@avito.ru"));
     }
 
-//    @RequestMapping("/htest")
-//    public String htest() {
-//        SessionFactory factory = getSessionFactory();
-//        Session session = factory.getCurrentSession();
-//
-//        List<Users> users = session.createQuery("FROM Users").list();
-//
-//        session.close();
-//
-//        return new Gson().toJson(users);
-//    }
+
 
     @RequestMapping("/greetingrest")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name) {
